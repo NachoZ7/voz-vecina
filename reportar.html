@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nuevo reporte · VozVecina</title>
-  <meta name="description" content="Creá un reporte vecinal en VozVecina: título, categoría, descripción, ubicación con mapa y evidencia fotográfica.">
+  <meta name="description"
+    content="Creá un reporte vecinal en VozVecina: título, categoría, descripción, ubicación con mapa y evidencia fotográfica.">
   <meta name="theme-color" content="#254c3e">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/w3.css">
   <link rel="stylesheet" href="css/fontawesome.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
 
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="VozVecina, ir al inicio">
-        <img src="assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
+        <img src="assets/logo.png" alt="" class="brand-mark" width="44" height="44">
         <span class="brand-copy">
           <span class="brand-name">Voz<span>Vecina</span></span>
           <span class="brand-tag">Red ciudadana</span>
@@ -32,7 +37,8 @@
         <a href="tickets.html">Tablero</a>
         <a href="metricas.html">Métricas</a>
         <a href="alertas.html">Alertas</a>
-        <a href="reportar.html" class="nav-cta" aria-current="page"><i class="fa-solid fa-plus" aria-hidden="true"></i> Reportar</a>
+        <a href="reportar.html" class="nav-cta" aria-current="page"><i class="fa-solid fa-plus" aria-hidden="true"></i>
+          Reportar</a>
       </nav>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -54,10 +60,12 @@
           <div>
             <span class="kicker">Crear reporte</span>
             <h1>Tu reporte, con toda la evidencia</h1>
-            <p>Contanos qué está pasando, dónde y desde cuándo. Una buena descripción y fotos actuales ayudan a que el barrio apoye y el municipio actúe.</p>
+            <p>Contanos qué está pasando, dónde y desde cuándo. Una buena descripción y fotos actuales ayudan a que el
+              barrio apoye y el municipio actúe.</p>
           </div>
           <div class="page-hero-actions">
-            <span class="sla-flag" style="background:rgba(15,36,29,.45);padding:9px 12px;"><i class="fa-regular fa-clock" aria-hidden="true"></i> Tiempo estimado: 2 minutos</span>
+            <span class="sla-flag" style="background:rgba(15,36,29,.45);padding:9px 12px;"><i
+                class="fa-regular fa-clock" aria-hidden="true"></i> Tiempo estimado: 2 minutos</span>
           </div>
         </div>
       </div>
@@ -89,7 +97,9 @@
 
                   <div class="field">
                     <label for="titulo">Título del reclamo <span class="req" aria-hidden="true">*</span></label>
-                    <input class="input" type="text" id="titulo" name="titulo" maxlength="90" required placeholder="Ej.: Bache profundo en la esquina de Av. San Martín" aria-describedby="titulo-hint tituloCounter" autocomplete="off">
+                    <input class="input" type="text" id="titulo" name="titulo" maxlength="90" required
+                      placeholder="Ej.: Bache profundo en la esquina de Av. San Martín"
+                      aria-describedby="titulo-hint tituloCounter" autocomplete="off">
                     <div style="display:flex;justify-content:space-between;gap:10px;">
                       <span class="field-hint" id="titulo-hint">Sé específico: qué es, dónde está y desde cuándo.</span>
                       <span class="counter" id="tituloCounter" aria-live="polite">0 / 90</span>
@@ -111,8 +121,11 @@
                   </div>
 
                   <div class="field">
-                    <label for="descripcion">Descripción del problema <span class="req" aria-hidden="true">*</span></label>
-                    <textarea class="input" id="descripcion" name="descripcion" maxlength="600" required placeholder="Contá qué está pasando, cómo afecta a los vecinos y cualquier detalle útil para la inspección…" aria-describedby="descripcionCounter"></textarea>
+                    <label for="descripcion">Descripción del problema <span class="req"
+                        aria-hidden="true">*</span></label>
+                    <textarea class="input" id="descripcion" name="descripcion" maxlength="600" required
+                      placeholder="Contá qué está pasando, cómo afecta a los vecinos y cualquier detalle útil para la inspección…"
+                      aria-describedby="descripcionCounter"></textarea>
                     <div style="display:flex;justify-content:space-between;gap:12px;">
                       <span class="field-hint">No incluyas datos personales de terceros.</span>
                       <span class="counter" id="descripcionCounter" aria-live="polite">0 / 600</span>
@@ -152,7 +165,8 @@
                   <div class="field-row">
                     <div class="field">
                       <label for="direccion">Dirección <span class="req" aria-hidden="true">*</span></label>
-                      <input class="input" type="text" id="direccion" name="direccion" required placeholder="Calle y número" autocomplete="off">
+                      <input class="input" type="text" id="direccion" name="direccion" required
+                        placeholder="Calle y número" autocomplete="off">
                     </div>
                     <div class="field">
                       <label for="barrio">Barrio <span class="req" aria-hidden="true">*</span></label>
@@ -169,8 +183,10 @@
                   </div>
 
                   <div class="field">
-                    <label for="referencias">Referencias <span class="muted" style="font-weight:500;">(opcional)</span></label>
-                    <input class="input" type="text" id="referencias" name="referencias" placeholder="Ej.: frente al kiosco de la esquina, mano derecha" autocomplete="off">
+                    <label for="referencias">Referencias <span class="muted"
+                        style="font-weight:500;">(opcional)</span></label>
+                    <input class="input" type="text" id="referencias" name="referencias"
+                      placeholder="Ej.: frente al kiosco de la esquina, mano derecha" autocomplete="off">
                   </div>
 
                   <div class="field">
@@ -180,9 +196,11 @@
                       <div class="map-street tres">Plaza Central</div>
                       <div class="map-pin" id="mapPin" aria-hidden="true"></div>
                       <div class="map-tools">
-                        <button type="button" class="map-tool" id="mapLocate"><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Mi ubicación</button>
+                        <button type="button" class="map-tool" id="mapLocate"><i class="fa-solid fa-location-crosshairs"
+                            aria-hidden="true"></i> Mi ubicación</button>
                       </div>
-                      <span class="map-hint"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Hacé clic en el mapa para mover el pin</span>
+                      <span class="map-hint"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Hacé clic en el
+                        mapa para mover el pin</span>
                     </div>
                     <div class="map-coords" id="mapCoords">
                       <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
@@ -193,7 +211,8 @@
                   <div class="field">
                     <span class="field-label">Precisión de la ubicación</span>
                     <div class="sla-mini-box" style="background:var(--crema);margin-top:0;">
-                      <span style="color:var(--gris);"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> La dirección solo se usa para derivar el reclamo al área correspondiente.</span>
+                      <span style="color:var(--gris);"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> La
+                        dirección solo se usa para derivar el reclamo al área correspondiente.</span>
                     </div>
                   </div>
                 </section>
@@ -209,9 +228,11 @@
                   </div>
 
                   <div class="field">
-                    <span class="field-label">Fotos del problema <span class="muted" style="font-weight:500;">(recomendado)</span></span>
+                    <span class="field-label">Fotos del problema <span class="muted"
+                        style="font-weight:500;">(recomendado)</span></span>
                     <div class="dropzone" id="dropzone">
-                      <input type="file" id="fotoInput" accept="image/*" multiple aria-label="Seleccionar fotos del problema">
+                      <input type="file" id="fotoInput" accept="image/*" multiple
+                        aria-label="Seleccionar fotos del problema">
                       <span class="dropzone-icon"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i></span>
                       <strong>Arrastrá fotos o hacé clic para subirlas</strong>
                       <p id="dropzoneHint">Hasta 3 fotos · JPG, PNG o WEBP · Máx. 5 MB</p>
@@ -220,14 +241,18 @@
                     <div class="photo-previews" id="photoPreviews"></div>
                   </div>
 
-                  <div class="w3-panel w3-pale-yellow w3-leftbar w3-border-orange" style="border-radius:10px;font-size:.78rem;color:#6b5200;margin:6px 0 18px;padding:12px 14px;">
+                  <div class="w3-panel w3-pale-yellow w3-leftbar w3-border-orange"
+                    style="border-radius:10px;font-size:.78rem;color:#6b5200;margin:6px 0 18px;padding:12px 14px;">
                     <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-                    <strong>Publicación responsable:</strong> el reporte será público. Evitá incluir patentes, caras de personas o datos personales.
+                    <strong>Publicación responsable:</strong> el reporte será público. Evitá incluir patentes, caras de
+                    personas o datos personales.
                   </div>
 
                   <label class="check-row">
                     <input type="checkbox" id="privacidad" name="privacidad" required>
-                    <span>Acepto que el reclamo y las fotos sean públicos para que vecinos y municipio puedan verlos. <a href="alertas.html">Ver política de datos</a> <span class="req" aria-hidden="true">*</span></span>
+                    <span>Acepto que el reclamo y las fotos sean públicos para que vecinos y municipio puedan verlos. <a
+                        href="alertas.html">Ver política de datos</a> <span class="req"
+                        aria-hidden="true">*</span></span>
                   </label>
 
                   <label class="check-row">
@@ -236,9 +261,12 @@
                   </label>
 
                   <div class="form-actions">
-                    <span class="secure-note"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Tus datos se mantienen protegidos</span>
-                    <button type="button" class="btn btn-outline" id="saveDraft"><i class="fa-regular fa-floppy-disk" aria-hidden="true"></i> Guardar borrador</button>
-                    <button type="submit" class="btn btn-orange btn-primary-action"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Publicar reporte</button>
+                    <span class="secure-note"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Tus datos se
+                      mantienen protegidos</span>
+                    <button type="button" class="btn btn-outline" id="saveDraft"><i class="fa-regular fa-floppy-disk"
+                        aria-hidden="true"></i> Guardar borrador</button>
+                    <button type="submit" class="btn btn-orange btn-primary-action"><i class="fa-solid fa-paper-plane"
+                        aria-hidden="true"></i> Publicar reporte</button>
                   </div>
                 </section>
               </form>
@@ -250,7 +278,8 @@
             <div class="side-card dark">
               <span class="side-kicker">SLA vecinal</span>
               <h3>Así se prioriza tu reclamo</h3>
-              <p>La cantidad de apoyos ajusta la urgencia y el tiempo máximo de respuesta que el municipio debe cumplir.</p>
+              <p>La cantidad de apoyos ajusta la urgencia y el tiempo máximo de respuesta que el municipio debe cumplir.
+              </p>
               <div class="sla-mini-box">
                 <span>Prioridad alta</span>
                 <strong>24 h</strong>
@@ -263,17 +292,22 @@
                 <span>Prioridad baja</span>
                 <strong>96 h</strong>
               </div>
-              <p style="margin-top:14px;font-size:.67rem;color:rgba(246,242,233,.48);">* Días hábiles desde la validación del reclamo.</p>
+              <p style="margin-top:14px;font-size:.67rem;color:rgba(246,242,233,.48);">* Días hábiles desde la
+                validación del reclamo.</p>
             </div>
 
             <div class="side-card">
               <span class="side-kicker">Antes de publicar</span>
               <h3>Un reporte que sí avanza</h3>
               <ul class="tip-list">
-                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Verificá que no exista otro ticket para el mismo problema.</span></li>
-                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Sacá una foto amplia y otra de detalle. Ayudan a la inspección.</span></li>
-                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Indicá desde cuándo ocurre y a quiénes afecta.</span></li>
-                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Compartí el reclamo para sumar apoyos y elevar el SLA.</span></li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Verificá que no exista otro ticket
+                    para el mismo problema.</span></li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Sacá una foto amplia y otra de
+                    detalle. Ayudan a la inspección.</span></li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Indicá desde cuándo ocurre y a
+                    quiénes afecta.</span></li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Compartí el reclamo para sumar
+                    apoyos y elevar el SLA.</span></li>
               </ul>
             </div>
 
@@ -282,7 +316,8 @@
                 <i class="fa-solid fa-headset" aria-hidden="true"></i>
                 <div>
                   <strong style="display:block;color:var(--verde);margin-bottom:2px;">¿Necesitás una mano?</strong>
-                  Escribinos a <a href="mailto:hola@vozvecina.org">hola@vozvecina.org</a> o consultá la <a href="alertas.html">guía de alertas</a>.
+                  Escribinos a <a href="mailto:hola@vozvecina.org">hola@vozvecina.org</a> o consultá la <a
+                    href="alertas.html">guía de alertas</a>.
                 </div>
               </div>
             </div>
@@ -293,35 +328,44 @@
   </main>
 
   <!-- Modal de error de validación -->
-  <div id="formErrorModal" class="w3-modal vv-modal-wrap" role="alertdialog" aria-modal="true" aria-labelledby="formErrorTitle" aria-describedby="formErrorDesc" aria-hidden="true">
+  <div id="formErrorModal" class="w3-modal vv-modal-wrap" role="alertdialog" aria-modal="true"
+    aria-labelledby="formErrorTitle" aria-describedby="formErrorDesc" aria-hidden="true">
     <div class="w3-modal-content vv-modal-content vv-modal-sm">
-      <button type="button" class="modal-close" data-close aria-label="Cerrar alerta"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <button type="button" class="modal-close" data-close aria-label="Cerrar alerta"><i class="fa-solid fa-xmark"
+          aria-hidden="true"></i></button>
       <div class="state-modal-body">
         <span class="state-modal-icon error"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
         <h2 id="formErrorTitle">Faltan datos en el reporte</h2>
         <p id="formErrorDesc">No pudimos publicar el reclamo. Revisá estos puntos y volvé a intentarlo:</p>
-        <ul id="formErrorList" style="max-width:360px;margin:16px auto 0;padding-left:20px;color:#5c4a36;font-size:.8rem;line-height:1.6;text-align:left;"></ul>
+        <ul id="formErrorList"
+          style="max-width:360px;margin:16px auto 0;padding-left:20px;color:#5c4a36;font-size:.8rem;line-height:1.6;text-align:left;">
+        </ul>
         <div class="state-modal-actions">
-          <button type="button" class="btn btn-orange" data-close><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Volver al formulario</button>
+          <button type="button" class="btn btn-orange" data-close><i class="fa-solid fa-pen-to-square"
+              aria-hidden="true"></i> Volver al formulario</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Modal de éxito -->
-  <div id="formSuccessModal" class="w3-modal vv-modal-wrap" role="dialog" aria-modal="true" aria-labelledby="formSuccessTitle" aria-hidden="true">
+  <div id="formSuccessModal" class="w3-modal vv-modal-wrap" role="dialog" aria-modal="true"
+    aria-labelledby="formSuccessTitle" aria-hidden="true">
     <div class="w3-modal-content vv-modal-content vv-modal-sm">
-      <button type="button" class="modal-close" data-close aria-label="Cerrar confirmación"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <button type="button" class="modal-close" data-close aria-label="Cerrar confirmación"><i class="fa-solid fa-xmark"
+          aria-hidden="true"></i></button>
       <div class="state-modal-body">
         <span class="state-modal-icon success"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
         <h2 id="formSuccessTitle">¡Reporte publicado!</h2>
         <p>Tu reclamo ya está visible para todo el barrio. Compartilo para sumar apoyos y elevar la prioridad.</p>
         <div class="state-modal-detail">
           <span>Ticket generado: <strong id="successTicketId">VV-2087</strong></span><br>
-          <span>Categoría: <strong id="successCategory">Baches y calzada</strong> · <strong id="successSla">SLA estimado 48 h</strong></span>
+          <span>Categoría: <strong id="successCategory">Baches y calzada</strong> · <strong id="successSla">SLA estimado
+              48 h</strong></span>
         </div>
         <div class="state-modal-actions">
-          <a href="tickets.html" class="btn btn-orange"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i> Ver mi ticket</a>
+          <a href="tickets.html" class="btn btn-orange"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+            Ver mi ticket</a>
           <button type="button" class="btn btn-outline" data-close>Cerrar</button>
         </div>
       </div>
@@ -334,14 +378,19 @@
         <div class="footer-brand">
           <a href="index.html" class="brand" aria-label="VozVecina, ir al inicio">
             <img src="assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
-            <span class="brand-copy"><span class="brand-name">Voz<span>Vecina</span></span><span class="brand-tag">Red ciudadana</span></span>
+            <span class="brand-copy"><span class="brand-name">Voz<span>Vecina</span></span><span class="brand-tag">Red
+                ciudadana</span></span>
           </a>
           <p>Una red colaborativa para que los problemas del barrio se vean, se prioricen y se resuelvan.</p>
           <div class="footer-social">
-            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="VozVecina en Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="VozVecina en Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="https://x.com" target="_blank" rel="noopener" aria-label="VozVecina en X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-            <a href="mailto:hola@vozvecina.org" aria-label="Escribir a VozVecina"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="VozVecina en Instagram"><i
+                class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="VozVecina en Facebook"><i
+                class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="VozVecina en X"><i
+                class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="mailto:hola@vozvecina.org" aria-label="Escribir a VozVecina"><i class="fa-solid fa-envelope"
+                aria-hidden="true"></i></a>
           </div>
         </div>
         <div class="footer-col">
@@ -367,7 +416,9 @@
           <h4>Sumate al resumen</h4>
           <div class="footer-mini">
             <p>Una vez por semana: reclamos que avanzan, logros del barrio y próximos pasos.</p>
-            <button type="button" class="btn btn-orange btn-sm" data-demo-toast data-title="Suscripción simulada" data-message="En el prototipo no se envían correos reales."><i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Recibir el resumen</button>
+            <button type="button" class="btn btn-orange btn-sm" data-demo-toast data-title="Suscripción simulada"
+              data-message="En el prototipo no se envían correos reales."><i class="fa-regular fa-paper-plane"
+                aria-hidden="true"></i> Recibir el resumen</button>
           </div>
         </div>
       </div>
@@ -384,4 +435,5 @@
 
   <div id="toastStack" class="toast-stack" aria-live="polite" aria-atomic="false"></div>
 </body>
+
 </html>

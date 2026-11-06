@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centro de alertas · VozVecina</title>
-  <meta name="description" content="Centro de alertas de VozVecina: confirmaciones de tickets elevados, errores de validación, avisos de SLA y estado del servicio.">
+  <meta name="description"
+    content="Centro de alertas de VozVecina: confirmaciones de tickets elevados, errores de validación, avisos de SLA y estado del servicio.">
   <meta name="theme-color" content="#254c3e">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/w3.css">
   <link rel="stylesheet" href="css/fontawesome.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
 
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="VozVecina, ir al inicio">
-        <img src="assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
+        <img src="assets/logo.png" alt="" class="brand-mark" width="44" height="44">
         <span class="brand-copy">
           <span class="brand-name">Voz<span>Vecina</span></span>
           <span class="brand-tag">Red ciudadana</span>
@@ -52,7 +57,8 @@
           <div>
             <span class="kicker">Estados y notificaciones</span>
             <h1>Todo claro, incluso cuando algo falla</h1>
-            <p>Acá ves las confirmaciones de tus acciones, los errores que hay que corregir y los avisos de SLA del barrio. Mensajes claros, en naranja cuando hay que prestar atención.</p>
+            <p>Acá ves las confirmaciones de tus acciones, los errores que hay que corregir y los avisos de SLA del
+              barrio. Mensajes claros, en naranja cuando hay que prestar atención.</p>
           </div>
         </div>
       </div>
@@ -68,7 +74,8 @@
               <div class="elevated-head">
                 <span class="big-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
                 <h2 id="elevado-titulo">¡Ticket elevado con éxito!</h2>
-                <p>Los apoyos vecinales superaron el umbral de prioridad y el reclamo pasó a la fila crítica del municipio.</p>
+                <p>Los apoyos vecinales superaron el umbral de prioridad y el reclamo pasó a la fila crítica del
+                  municipio.</p>
               </div>
               <div class="elevated-body">
                 <div class="elevated-ticket">
@@ -92,14 +99,16 @@
                 </div>
 
                 <div class="state-actions">
-                  <a href="tickets.html" class="state-link solid"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i> Ver en el tablero</a>
+                  <a href="tickets.html" class="state-link solid"><i class="fa-solid fa-table-cells-large"
+                      aria-hidden="true"></i> Ver en el tablero</a>
                 </div>
               </div>
             </article>
 
             <div class="alert-panel-head">
               <h2>Estados del sistema</h2>
-              <p>Así se ven los cuatro tipos de mensaje en la interfaz. Todos usan la tipografía y los colores de la marca, con el naranja reservado para lo urgente.</p>
+              <p>Así se ven los cuatro tipos de mensaje en la interfaz. Todos usan la tipografía y los colores de la
+                marca, con el naranja reservado para lo urgente.</p>
             </div>
 
             <!-- Success -->
@@ -107,7 +116,8 @@
               <span class="state-icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
               <div>
                 <h3 id="estado-success">Acción completada</h3>
-                <p>Tu comentario se publicó y el autor del reclamo recibió una notificación. El hilo queda visible para todo el barrio.</p>
+                <p>Tu comentario se publicó y el autor del reclamo recibió una notificación. El hilo queda visible para
+                  todo el barrio.</p>
               </div>
             </article>
 
@@ -116,7 +126,8 @@
               <span class="state-icon" aria-hidden="true"><i class="fa-solid fa-triangle-exclamation"></i></span>
               <div>
                 <h3 id="estado-error">Faltan datos en el reporte</h3>
-                <p>No pudimos publicar el reclamo porque falta la ubicación y la descripción es demasiado corta. Revisá los campos marcados y volvé a intentarlo.</p>
+                <p>No pudimos publicar el reclamo porque falta la ubicación y la descripción es demasiado corta. Revisá
+                  los campos marcados y volvé a intentarlo.</p>
               </div>
             </article>
 
@@ -125,7 +136,8 @@
               <span class="state-icon" aria-hidden="true"><i class="fa-solid fa-hourglass-half"></i></span>
               <div>
                 <h3 id="estado-warning">SLA próximo a vencer</h3>
-                <p>Al reclamo VV-2038 le quedan 6 horas para cumplir el plazo comprometido. Sumá tu apoyo o adjuntá evidencia actualizada para evitar que venza.</p>
+                <p>Al reclamo VV-2038 le quedan 6 horas para cumplir el plazo comprometido. Sumá tu apoyo o adjuntá
+                  evidencia actualizada para evitar que venza.</p>
               </div>
             </article>
 
@@ -134,7 +146,8 @@
               <span class="state-icon" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span>
               <div>
                 <h3 id="estado-info">Actualización del servicio</h3>
-                <p>El tablero y las métricas funcionan con normalidad. La próxima actualización de datos está programada para mañana a las 08:00.</p>
+                <p>El tablero y las métricas funcionan con normalidad. La próxima actualización de datos está programada
+                  para mañana a las 08:00.</p>
               </div>
             </article>
           </div>
@@ -167,7 +180,10 @@
               </label>
 
               <div class="state-actions" style="margin-top:16px;">
-                <button type="button" class="state-link solid" data-demo-toast data-type="success" data-title="Preferencias guardadas" data-message="Podés cambiarlas cuando quieras desde este panel."><i class="fa-regular fa-floppy-disk" aria-hidden="true"></i> Guardar preferencias</button>
+                <button type="button" class="state-link solid" data-demo-toast data-type="success"
+                  data-title="Preferencias guardadas"
+                  data-message="Podés cambiarlas cuando quieras desde este panel."><i class="fa-regular fa-floppy-disk"
+                    aria-hidden="true"></i> Guardar preferencias</button>
               </div>
             </section>
 
@@ -182,19 +198,23 @@
               <ul class="tip-list" style="gap:15px;">
                 <li>
                   <i class="fa-solid fa-circle-check" style="color:#1f6b4e;" aria-hidden="true"></i>
-                  <span><strong style="color:var(--verde);">Elevado</strong> · VV-2041 pasó a prioridad crítica.<br><span class="muted" style="font-size:.7rem;">Hace 12 minutos</span></span>
+                  <span><strong style="color:var(--verde);">Elevado</strong> · VV-2041 pasó a prioridad
+                    crítica.<br><span class="muted" style="font-size:.7rem;">Hace 12 minutos</span></span>
                 </li>
                 <li>
                   <i class="fa-solid fa-circle-plus" style="color:var(--naranja-700);" aria-hidden="true"></i>
-                  <span><strong style="color:var(--verde);">Nuevo apoyo</strong> · 8 vecinos sumaron su respaldo a VV-2035.<br><span class="muted" style="font-size:.7rem;">Hace 40 minutos</span></span>
+                  <span><strong style="color:var(--verde);">Nuevo apoyo</strong> · 8 vecinos sumaron su respaldo a
+                    VV-2035.<br><span class="muted" style="font-size:.7rem;">Hace 40 minutos</span></span>
                 </li>
                 <li>
                   <i class="fa-solid fa-hourglass-half" style="color:#8a5a00;" aria-hidden="true"></i>
-                  <span><strong style="color:var(--verde);">SLA por vencer</strong> · VV-2038 vence en 6 horas.<br><span class="muted" style="font-size:.7rem;">Hace 1 hora</span></span>
+                  <span><strong style="color:var(--verde);">SLA por vencer</strong> · VV-2038 vence en 6 horas.<br><span
+                      class="muted" style="font-size:.7rem;">Hace 1 hora</span></span>
                 </li>
                 <li>
                   <i class="fa-solid fa-comment-dots" style="color:var(--verde-600);" aria-hidden="true"></i>
-                  <span><strong style="color:var(--verde);">Nuevo comentario</strong> · María Paz actualizó el hilo del bache.<br><span class="muted" style="font-size:.7rem;">Hace 2 horas</span></span>
+                  <span><strong style="color:var(--verde);">Nuevo comentario</strong> · María Paz actualizó el hilo del
+                    bache.<br><span class="muted" style="font-size:.7rem;">Hace 2 horas</span></span>
                 </li>
               </ul>
             </section>
@@ -206,10 +226,17 @@
                 </div>
               </div>
               <ul class="tip-list">
-                <li><i class="fa-solid fa-circle" style="color:#1f6b4e;" aria-hidden="true"></i><span><strong>Verde:</strong> la acción se completó correctamente.</span></li>
-                <li><i class="fa-solid fa-circle" style="color:var(--naranja);" aria-hidden="true"></i><span><strong>Naranja:</strong> hay un error o algo requiere tu atención.</span></li>
-                <li><i class="fa-solid fa-circle" style="color:#d8a028;" aria-hidden="true"></i><span><strong>Ámbar:</strong> aviso preventivo, todavía podés actuar.</span></li>
-                <li><i class="fa-solid fa-circle" style="color:#72cb10;" aria-hidden="true"></i><span><strong>Verde claro:</strong> información general del servicio.</span></li>
+                <li><i class="fa-solid fa-circle" style="color:#1f6b4e;"
+                    aria-hidden="true"></i><span><strong>Verde:</strong> la acción se completó correctamente.</span>
+                </li>
+                <li><i class="fa-solid fa-circle" style="color:var(--naranja);"
+                    aria-hidden="true"></i><span><strong>Naranja:</strong> hay un error o algo requiere tu
+                    atención.</span></li>
+                <li><i class="fa-solid fa-circle" style="color:#d8a028;"
+                    aria-hidden="true"></i><span><strong>Ámbar:</strong> aviso preventivo, todavía podés actuar.</span>
+                </li>
+                <li><i class="fa-solid fa-circle" style="color:#72cb10;" aria-hidden="true"></i><span><strong>Verde
+                      claro:</strong> información general del servicio.</span></li>
               </ul>
             </section>
           </aside>
@@ -224,14 +251,19 @@
         <div class="footer-brand">
           <a href="index.html" class="brand" aria-label="VozVecina, ir al inicio">
             <img src="assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
-            <span class="brand-copy"><span class="brand-name">Voz<span>Vecina</span></span><span class="brand-tag">Red ciudadana</span></span>
+            <span class="brand-copy"><span class="brand-name">Voz<span>Vecina</span></span><span class="brand-tag">Red
+                ciudadana</span></span>
           </a>
           <p>Una red colaborativa para que los problemas del barrio se vean, se prioricen y se resuelvan.</p>
           <div class="footer-social">
-            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="VozVecina en Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="VozVecina en Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="https://x.com" target="_blank" rel="noopener" aria-label="VozVecina en X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-            <a href="mailto:hola@vozvecina.org" aria-label="Escribir a VozVecina"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="VozVecina en Instagram"><i
+                class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="VozVecina en Facebook"><i
+                class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="VozVecina en X"><i
+                class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="mailto:hola@vozvecina.org" aria-label="Escribir a VozVecina"><i class="fa-solid fa-envelope"
+                aria-hidden="true"></i></a>
           </div>
         </div>
         <div class="footer-col">
@@ -257,7 +289,9 @@
           <h4>Sumate al resumen</h4>
           <div class="footer-mini">
             <p>Una vez por semana: reclamos que avanzan, logros del barrio y próximos pasos.</p>
-            <button type="button" class="btn btn-orange btn-sm" data-demo-toast data-title="Suscripción simulada" data-message="En el prototipo no se envían correos reales."><i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Recibir el resumen</button>
+            <button type="button" class="btn btn-orange btn-sm" data-demo-toast data-title="Suscripción simulada"
+              data-message="En el prototipo no se envían correos reales."><i class="fa-regular fa-paper-plane"
+                aria-hidden="true"></i> Recibir el resumen</button>
           </div>
         </div>
       </div>
@@ -274,4 +308,5 @@
 
   <div id="toastStack" class="toast-stack" aria-live="polite" aria-atomic="false"></div>
 </body>
+
 </html>

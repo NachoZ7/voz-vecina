@@ -173,25 +173,25 @@
     },
     "VV-2017": {
       id: "VV-2017",
-      title: "Raíces levantando la vereda",
-      category: "Veredas",
-      slug: "veredas",
+      title: "Poste de luz caído",
+      category: "Luminarias",
+      slug: "postes",
       status: "Nuevo",
       statusClass: "pill-nuevo",
-      location: "Belgrano 210 · Barrio Norte",
+      location: "Isidoro Cañones 2025 · San Justo",
       time: "hace 2 días",
-      image: "assets/vereda.svg",
-      gallery: ["assets/vereda.svg", "assets/bache.svg"],
+      image: "assets/foto poste de luz caido.jpeg",
+      gallery: [],
       votes: 31,
       comments: 4,
-      photos: 2,
-      slaLabel: "SLA 96 h",
-      priority: "Baja",
-      priorityClass: "",
-      slaPct: 22,
+      photos: 1,
+      slaLabel: "SLA 24 h",
+      priority: "Alta",
+      priorityClass: "fill-alta",
+      slaPct: 74,
       recency: 50,
       near: false,
-      desc: "Las raíces del árbol levantaron las baldosas y dejaron un desnivel peligroso. Los vecinos mayores y las personas con movilidad reducida no pueden pasar por la vereda. Pedimos una inspección técnica."
+      desc: "El poste de luz de la esquina se cayó tras la tormenta y quedó atravesado sobre la vereda, con los cables cortados y expuestos. Los vecinos colocamos una soga y una señal provisoria para que nadie pase, pero de noche la zona queda a oscuras y el riesgo es mayor. Pedimos que lo retiren y restituyan el alumbrado con urgencia."
     }
   };
 
@@ -215,6 +215,12 @@
       { name: "Sofía Ferreyra", initials: "SF", time: "hace 35 min", badge: "Vecina verificada", text: "Mi mamá usa bastón y no puede pasar por ahí. Es un riesgo concreto, necesitamos una rampa y reparación." },
       { name: "Pablo G.", initials: "PG", time: "hace 1 h", badge: "", text: "Mandé la foto que sacamos esta mañana. La baldosa está levantada casi 10 centímetros." },
       { name: "Equipo VozVecina", initials: "VV", time: "hace 15 min", badge: "Moderación", text: "Sugerimos sumar la mayor cantidad de apoyo posible para que entre en el plan de reparaciones del próximo mes." }
+    ],
+    postes: [
+      { name: "Lucía Benítez", initials: "LB", time: "hace 2 h", badge: "Vecina verificada", text: "El poste quedó tirado sobre la vereda y los cables están a la altura de los chicos. Avisé a Defensa Civil, pero necesitamos que vengan urgente." },
+      { name: "Martín Aguirre", initials: "MA", time: "hace 50 min", badge: "", text: "Ya cortaron la luz en media cuadra. Puse una soga para que nadie pase por abajo, pero de noche no se ve nada." },
+      { name: "Sandra Rojas", initials: "SR", time: "hace 20 min", badge: "", text: "Desde ayer no tenemos luz y el poste sigue ahí. Los chicos pasan por al lado para ir a la escuela." },
+      { name: "Equipo VozVecina", initials: "VV", time: "hace 10 min", badge: "Moderación", text: "El reclamo fue derivado a Alumbrado Público y a Defensa Civil por riesgo eléctrico. Evitá acercarte al poste hasta que lo aseguren." }
     ]
   };
 
@@ -526,7 +532,7 @@
     setText("#detailSlaPct", ticket.slaPct + "%");
     setText("#detailPriority", ticket.priority);
     setText("#detailMetaCategory", ticket.category);
-    setText("#detailMetaPhotos", ticket.photos + " fotos vecinales");
+    setText("#detailMetaPhotos", ticket.photos + (ticket.photos === 1 ? " foto vecinal" : " fotos vecinales"));
 
     var estado = $("#detailStatus");
     if (estado) {

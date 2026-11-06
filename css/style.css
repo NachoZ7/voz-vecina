@@ -3785,13 +3785,13 @@ select.input {
 }
 
 .state-card.info {
-  border-color: #c7d8d0;
-  background: #f7faf9;
+  border-color: #d5efb7;
+  background: #f8fcf2;
 }
 
 .state-card.info .state-icon {
-  background: var(--verde-100);
-  color: var(--verde);
+  background: #e8f7d4;
+  color: #72cb10;
 }
 
 .state-actions {
@@ -3945,12 +3945,6 @@ select.input {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.demo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9px;
 }
 
 /* Modal de estado */
@@ -4502,10 +4496,6 @@ select.input {
 
   .donut::before {
     inset: 22px;
-  }
-
-  .demo-grid {
-    grid-template-columns: 1fr;
   }
 
   .elevated-meta {

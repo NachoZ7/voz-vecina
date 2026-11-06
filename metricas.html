@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Métricas y SLA · VozVecina</title>
+  <meta name="description" content="Panel público de VozVecina: cumplimiento del SLA, reclamos resueltos y pendientes, tiempos de respuesta y desempeño por barrio.">
+  <meta name="theme-color" content="#254c3e">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="VozVecina, ir al inicio">
+        <img src="assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
+        <span class="brand-copy">
+          <span class="brand-name">Voz<span>Vecina</span></span>
+          <span class="brand-tag">Red ciudadana</span>
+        </span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="tickets.html">Tablero</a>
+        <a href="metricas.html" aria-current="page">Métricas</a>
+        <a href="alertas.html">Alertas</a>
+        <a href="reportar.html" class="nav-cta"><i class="fa-solid fa-plus" aria-hidden="true"></i> Reportar</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <a href="index.html">Inicio</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span aria-current="page">Métricas y SLA</span>
+        </nav>
+        <div class="page-hero-inner">
+          <div>
+            <span class="kicker">Transparencia</span>
+            <h1>El SLA también se controla entre vecinos</h1>
+            <p>Medimos cuánto tarda el municipio en responder, qué reclamos se resuelven y cómo la presión vecinal cambia las prioridades. Datos públicos, todos los meses.</p>
+          </div>
+          <div class="page-hero-actions">
+            <button type="button" class="btn btn-outline-light" data-demo-toast data-title="Reporte simulado" data-message="En la versión final podrás descargar el informe en PDF."><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Descargar informe</button>
+            <a href="tickets.html" class="btn btn-orange"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i> Ir al tablero</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="metrics-workspace">
+      <div class="container">
+        <div class="feed-toolbar" style="margin-bottom:18px;">
+          <span class="results-count"><i class="fa-solid fa-circle-check" style="color:var(--verde-600);" aria-hidden="true"></i> Datos públicos actualizados al 5 de noviembre de 2026</span>
+          <div class="period-switch" role="group" aria-label="Seleccionar período de las métricas">
+            <button type="button" class="period-btn" data-period="30" aria-pressed="true">30 días</button>
+            <button type="button" class="period-btn" data-period="90" aria-pressed="false">90 días</button>
+            <button type="button" class="period-btn" data-period="365" aria-pressed="false">12 meses</button>
+          </div>
+        </div>
+
+        <!-- KPIs -->
+        <div class="kpi-grid" aria-label="Indicadores principales">
+          <article class="kpi-card accent">
+            <div class="kpi-top">
+              <span class="kpi-icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></span>
+              <span class="kpi-delta"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> +4 pts</span>
+            </div>
+            <p class="kpi-value"><span data-kpi="sla">72</span><small>%</small></p>
+            <p class="kpi-label">Cumplimiento del SLA municipal</p>
+            <p class="kpi-foot">Meta del municipio: 85% · <span data-period-label>Últimos 30 días</span></p>
+          </article>
+
+          <article class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-icon"><i class="fa-solid fa-stopwatch" aria-hidden="true"></i></span>
+              <span class="kpi-delta"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> -0,6 días</span>
+            </div>
+            <p class="kpi-value"><span data-kpi="respuesta">3,4</span><small>días</small></p>
+            <p class="kpi-label">Tiempo medio de primera respuesta</p>
+            <p class="kpi-foot">Objetivo vecinal: responder en ≤ 5 días</p>
+          </article>
+
+          <article class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+              <span class="kpi-delta"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> +18%</span>
+            </div>
+            <p class="kpi-value"><span data-kpi="resueltos">412</span></p>
+            <p class="kpi-label">Reclamos resueltos en el período</p>
+            <p class="kpi-foot">Verificados por vecinos y por el municipio</p>
+          </article>
+
+          <article class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-icon"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></span>
+              <span class="kpi-delta is-down"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> +9 tickets</span>
+            </div>
+            <p class="kpi-value"><span data-kpi="pendientes">211</span></p>
+            <p class="kpi-label">Reclamos pendientes de resolución</p>
+            <p class="kpi-foot">De un total de <strong>719</strong> tickets en el período</p>
+          </article>
+        </div>
+
+        <div class="metrics-layout">
+          <div class="metrics-col">
+            <!-- SLA por categoría -->
+            <section class="panel" aria-labelledby="sla-categoria-titulo">
+              <div class="panel-head">
+                <div>
+                  <h2 id="sla-categoria-titulo">Cumplimiento del SLA por categoría</h2>
+                  <p class="panel-sub">Porcentaje de reclamos respondidos dentro del plazo comprometido.</p>
+                </div>
+                <span class="panel-note"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-period-label>Últimos 30 días</span></span>
+              </div>
+
+              <div class="sla-list">
+                <div class="sla-item">
+                  <div class="sla-item-head">
+                    <span><i class="fa-solid fa-road" aria-hidden="true"></i> Baches y calzada</span>
+                    <strong><span data-sla-pct>78%</span></strong>
+                  </div>
+                  <div class="w3-progressbar w3-round-xlarge" role="progressbar" aria-label="Cumplimiento de SLA en baches" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                    <div class="w3-progressbar-fill" data-sla-cat data-width="78" style="width:0;"></div>
+                  </div>
+                  <div class="sla-item-foot"><span>32 de 41 reclamos a tiempo</span><span>Meta 85%</span></div>
+                </div>
+
+                <div class="sla-item">
+                  <div class="sla-item-head">
+                    <span><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Luminarias</span>
+                    <strong class="is-warn"><span data-sla-pct>64%</span></strong>
+                  </div>
+                  <div class="w3-progressbar w3-round-xlarge" role="progressbar" aria-label="Cumplimiento de SLA en luminarias" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100">
+                    <div class="w3-progressbar-fill fill-naranja" data-sla-cat data-width="64" style="width:0;"></div>
+                  </div>
+                  <div class="sla-item-foot"><span>18 de 28 reclamos a tiempo</span><span>Meta 85%</span></div>
+                </div>
+
+                <div class="sla-item">
+                  <div class="sla-item-head">
+                    <span><i class="fa-solid fa-trash-can" aria-hidden="true"></i> Residuos y limpieza</span>
+                    <strong><span data-sla-pct>86%</span></strong>
+                  </div>
+                  <div class="w3-progressbar w3-round-xlarge" role="progressbar" aria-label="Cumplimiento de SLA en residuos" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
+                    <div class="w3-progressbar-fill" data-sla-cat data-width="86" style="width:0;"></div>
+                  </div>
+                  <div class="sla-item-foot"><span>31 de 36 reclamos a tiempo</span><span>Meta 85%</span></div>
+                </div>
+
+                <div class="sla-item">
+                  <div class="sla-item-head">
+                    <span><i class="fa-solid fa-shoe-prints" aria-hidden="true"></i> Veredas y accesibilidad</span>
+                    <strong class="is-warn"><span data-sla-pct>55%</span></strong>
+                  </div>
+                  <div class="w3-progressbar w3-round-xlarge" role="progressbar" aria-label="Cumplimiento de SLA en veredas" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                    <div class="w3-progressbar-fill fill-naranja" data-sla-cat data-width="55" style="width:0;"></div>
+                  </div>
+                  <div class="sla-item-foot"><span>11 de 20 reclamos a tiempo</span><span>Meta 85%</span></div>
+                </div>
+
+                <div class="sla-item">
+                  <div class="sla-item-head">
+                    <span><i class="fa-solid fa-tree-city" aria-hidden="true"></i> Otros reclamos</span>
+                    <strong class="is-warn"><span data-sla-pct>69%</span></strong>
+                  </div>
+                  <div class="w3-progressbar w3-round-xlarge" role="progressbar" aria-label="Cumplimiento de SLA en otros reclamos" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100">
+                    <div class="w3-progressbar-fill fill-naranja" data-sla-cat data-width="69" style="width:0;"></div>
+                  </div>
+                  <div class="sla-item-foot"><span>27 de 39 reclamos a tiempo</span><span>Meta 85%</span></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Evolución mensual -->
+            <section class="panel" aria-labelledby="evolucion-titulo">
+              <div class="panel-head">
+                <div>
+                  <h2 id="evolucion-titulo">Evolución mensual de reclamos</h2>
+                  <p class="panel-sub">Resueltos y pendientes acumulados en los últimos seis meses.</p>
+                </div>
+                <span class="panel-note"><i class="fa-solid fa-calendar" aria-hidden="true"></i> May — Oct 2026</span>
+              </div>
+
+              <div class="trend-chart" role="img" aria-label="Gráfico de barras: reclamos resueltos y pendientes entre mayo y octubre de 2026">
+                <div class="trend-bars">
+                  <div class="trend-group">
+                    <div class="trend-pair">
+                      <div class="trend-bar resuelto" style="height:58%" title="Mayo: 268 resueltos"></div>
+                      <div class="trend-bar pendiente" style="height:27%" title="Mayo: 124 pendientes"></div>
+                    </div>
+                    <span class="trend-month">May</span>
+                  </div>
+                  <div class="trend-group">
+                    <div class="trend-pair">
+                      <div class="trend-bar resuelto" style="height:64%" title="Junio: 296 resueltos"></div>
+                      <div class="trend-bar pendiente" style="height:31%" title="Junio: 142 pendientes"></div>
+                    </div>
+                    <span class="trend-month">Jun</span>
+                  </div>
+                  <div class="trend-group">
+                    <div class="trend-pair">
+                      <div class="trend-bar resuelto" style="height:55%" title="Julio: 254 resueltos"></div>
+                      <div class="trend-bar pendiente" style="height:24%" title="Julio: 110 pendientes"></div>
+                    </div>
+                    <span class="trend-month">Jul</span>
+                  </div>
+                  <div class="trend-group">
+                    <div class="trend-pair">
+                      <div class="trend-bar resuelto" style="height:76%" title="Agosto: 352 resueltos"></div>
+                      <div class="trend-bar pendiente" style="height:34%" title="Agosto: 156 pendientes"></div>
+                    </div>
+                    <span class="trend-month">Ago</span>
+                  </div>
+                  <div class="trend-group">
+                    <div class="trend-pair">
+                      <div class="trend-bar resuelto" style="height:85%" title="Septiembre: 394 resueltos"></div>
+                      <div class="trend-bar pendiente" style="height:40%" title="Septiembre: 184 pendientes"></div>
+                    </div>
+                    <span class="trend-month">Sep</span>
+                  </div>
+                  <div class="trend-group">
+                    <div class="trend-pair">
+                      <div class="trend-bar resuelto" style="height:92%" title="Octubre: 426 resueltos"></div>
+                      <div class="trend-bar pendiente" style="height:36%" title="Octubre: 166 pendientes"></div>
+                    </div>
+                    <span class="trend-month">Oct</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <span><i aria-hidden="true"></i> Resueltos</span>
+                <span><i aria-hidden="true"></i> Pendientes</span>
+              </div>
+            </section>
+
+            <div class="insight-band">
+              <span class="insight-icon"><i class="fa-solid fa-arrow-up-right-dots" aria-hidden="true"></i></span>
+              <div>
+                <h3>La presión vecinal funciona</h3>
+                <p>Los reclamos con más de <strong>50 apoyos</strong> se resuelven <strong>2,7 veces más rápido</strong> que los que tienen menos de 10: 4,1 días contra 11,3 días de media. Compartir un ticket cambia su prioridad real.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="metrics-col">
+            <!-- Dona -->
+            <section class="panel" aria-labelledby="distribucion-titulo">
+              <div class="panel-head">
+                <div>
+                  <h2 id="distribucion-titulo">Resueltos vs. pendientes</h2>
+                  <p class="panel-sub">Distribución de tickets en el período.</p>
+                </div>
+              </div>
+              <div class="donut-wrap">
+                <div class="donut" id="donut" role="img" aria-label="Distribución de reclamos: resueltos, en curso y pendientes">
+                  <div class="donut-center">
+                    <strong id="donutTotal">719</strong>
+                    <span>tickets</span>
+                  </div>
+                </div>
+                <div class="legend">
+                  <div class="legend-item"><span class="legend-dot" aria-hidden="true"></span> Resueltos <strong id="legendResueltos">412</strong></div>
+                  <div class="legend-item"><span class="legend-dot arena" aria-hidden="true"></span> En curso <strong id="legendCurso">96</strong></div>
+                  <div class="legend-item"><span class="legend-dot naranja" aria-hidden="true"></span> Pendientes <strong id="legendPendientes">211</strong></div>
+                </div>
+              </div>
+              <p class="metrics-disclaimer" id="donutPercentages">Resueltos 57% · Pendientes 29% · En curso 13%</p>
+            </section>
+
+            <!-- Tiempos por prioridad -->
+            <section class="panel" aria-labelledby="prioridad-titulo">
+              <div class="panel-head">
+                <div>
+                  <h2 id="prioridad-titulo">Tiempos de respuesta</h2>
+                  <p class="panel-sub">Según la prioridad impulsada por los vecinos.</p>
+                </div>
+                <span class="panel-note"><i class="fa-regular fa-clock" aria-hidden="true"></i> Días hábiles</span>
+              </div>
+
+              <div class="priority-list">
+                <div class="priority-item">
+                  <div class="priority-head">
+                    <span class="priority-name"><span class="dot-alta" aria-hidden="true"></span> Prioridad alta</span>
+                    <span class="priority-value"><span data-prio-value="alta">2,1</span> <small>días</small></span>
+                  </div>
+                  <div class="priority-track">
+                    <div class="priority-fill" data-prio-bar="alta" style="width:78%;"></div>
+                    <span class="priority-target" style="left:70%;" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="priority-item">
+                  <div class="priority-head">
+                    <span class="priority-name"><span class="dot-media" aria-hidden="true"></span> Prioridad media</span>
+                    <span class="priority-value"><span data-prio-value="media">4,8</span> <small>días</small></span>
+                  </div>
+                  <div class="priority-track">
+                    <div class="priority-fill media" data-prio-bar="media" style="width:58%;"></div>
+                    <span class="priority-target" style="left:70%;" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="priority-item">
+                  <div class="priority-head">
+                    <span class="priority-name"><span class="dot-baja" aria-hidden="true"></span> Prioridad baja</span>
+                    <span class="priority-value"><span data-prio-value="baja">9,2</span> <small>días</small></span>
+                  </div>
+                  <div class="priority-track">
+                    <div class="priority-fill baja" data-prio-bar="baja" style="width:34%;"></div>
+                    <span class="priority-target" style="left:70%;" aria-hidden="true"></span>
+                  </div>
+                </div>
+              </div>
+              <p class="priority-legend"><span class="line" aria-hidden="true"></span> Meta de respuesta vecinal</p>
+            </section>
+
+            <!-- Ranking -->
+            <section class="panel" aria-labelledby="ranking-titulo">
+              <div class="panel-head">
+                <div>
+                  <h2 id="ranking-titulo">Participación por barrio</h2>
+                  <p class="panel-sub">Apoyos vecinales registrados en el período.</p>
+                </div>
+              </div>
+              <div class="rank-list">
+                <div class="rank-item">
+                  <span class="rank-num">1</span>
+                  <div class="rank-body">
+                    <div class="rank-head"><span>Centro</span><strong>328 apoyos</strong></div>
+                    <div class="rank-track"><div class="rank-fill" style="--val:92%"></div></div>
+                  </div>
+                </div>
+                <div class="rank-item">
+                  <span class="rank-num">2</span>
+                  <div class="rank-body">
+                    <div class="rank-head"><span>Barrio Norte</span><strong>264 apoyos</strong></div>
+                    <div class="rank-track"><div class="rank-fill" style="--val:74%"></div></div>
+                  </div>
+                </div>
+                <div class="rank-item">
+                  <span class="rank-num">3</span>
+                  <div class="rank-body">
+                    <div class="rank-head"><span>Los Aromos</span><strong>197 apoyos</strong></div>
+                    <div class="rank-track"><div class="rank-fill" style="--val:56%"></div></div>
+                  </div>
+                </div>
+                <div class="rank-item">
+                  <span class="rank-num">4</span>
+                  <div class="rank-body">
+                    <div class="rank-head"><span>Costanera</span><strong>142 apoyos</strong></div>
+                    <div class="rank-track"><div class="rank-fill" style="--val:41%"></div></div>
+                  </div>
+                </div>
+                <div class="rank-item">
+                  <span class="rank-num">5</span>
+                  <div class="rank-body">
+                    <div class="rank-head"><span>San Martín</span><strong>115 apoyos</strong></div>
+                    <div class="rank-track"><div class="rank-fill" style="--val:33%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="w3-panel w3-leftbar w3-border-orange" style="margin-top:24px;border-radius:12px;background:#fffdf6;color:var(--gris);font-size:.76rem;line-height:1.6;">
+          <p style="margin:0;"><strong style="color:var(--verde);"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Metodología:</strong> los datos de este prototipo son simulados y se actualizan con cada período seleccionado. Un reclamo se considera dentro del SLA cuando el municipio registra una respuesta o resolución antes del plazo definido por su prioridad. Los tiempos se expresan en días hábiles y los apoyos se contabilizan por vecino verificado.</p>
+        </div>
+
+        <div class="cta-band" style="margin-top:26px;">
+          <div>
+            <span class="kicker" style="color:#ffc39c;">Vigilancia ciudadana</span>
+            <h2>Los números cambian cuando el barrio participa.</h2>
+            <p>¿Viste un reclamo vencido o una obra sin terminar? Reportalo y ayudanos a mantener los datos actualizados.</p>
+          </div>
+          <div class="cta-band-actions">
+            <a href="reportar.html" class="btn btn-orange"><i class="fa-solid fa-plus" aria-hidden="true"></i> Reportar un problema</a>
+            <a href="tickets.html" class="btn btn-outline-light"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i> Ver reclamos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand" aria-label="VozVecina, ir al inicio">
+            <img src="assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
+            <span class="brand-copy"><span class="brand-name">Voz<span>Vecina</span></span><span class="brand-tag">Red ciudadana</span></span>
+          </a>
+          <p>Una red colaborativa para que los problemas del barrio se vean, se prioricen y se resuelvan.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="VozVecina en Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="VozVecina en Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="VozVecina en X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="mailto:hola@vozvecina.org" aria-label="Escribir a VozVecina"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="tickets.html">Tablero de reclamos</a>
+            <a href="reportar.html">Reportar un problema</a>
+            <a href="metricas.html">Métricas y SLA</a>
+            <a href="alertas.html">Centro de alertas</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>La red</h4>
+          <div class="footer-links">
+            <a href="index.html#como-funciona">Cómo funciona</a>
+            <a href="metricas.html">Transparencia</a>
+            <a href="alertas.html">Estado del servicio</a>
+            <a href="mailto:hola@vozvecina.org">Contacto</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Sumate al resumen</h4>
+          <div class="footer-mini">
+            <p>Una vez por semana: reclamos que avanzan, logros del barrio y próximos pasos.</p>
+            <button type="button" class="btn btn-orange btn-sm" data-demo-toast data-title="Suscripción simulada" data-message="En el prototipo no se envían correos reales."><i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Recibir el resumen</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> VozVecina · Hecho por vecinos, para vecinos.</span>
+        <div class="footer-bottom-links">
+          <a href="alertas.html">Privacidad</a>
+          <a href="alertas.html">Términos</a>
+          <a href="alertas.html">Accesibilidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toastStack" class="toast-stack" aria-live="polite" aria-atomic="false"></div>
+</body>
+</html>

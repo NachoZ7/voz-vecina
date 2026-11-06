@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro de alertas · VozVecina</title>
+  <meta name="description" content="Centro de alertas de VozVecina: confirmaciones de tickets elevados, errores de validación, avisos de SLA y estado del servicio.">
+  <meta name="theme-color" content="#254c3e">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="VozVecina, ir al inicio">
+        <img src="assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
+        <span class="brand-copy">
+          <span class="brand-name">Voz<span>Vecina</span></span>
+          <span class="brand-tag">Red ciudadana</span>
+        </span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="tickets.html">Tablero</a>
+        <a href="metricas.html">Métricas</a>
+        <a href="alertas.html" aria-current="page">Alertas</a>
+        <a href="reportar.html" class="nav-cta"><i class="fa-solid fa-plus" aria-hidden="true"></i> Reportar</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <a href="index.html">Inicio</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span aria-current="page">Centro de alertas</span>
+        </nav>
+        <div class="page-hero-inner">
+          <div>
+            <span class="kicker">Estados y notificaciones</span>
+            <h1>Todo claro, incluso cuando algo falla</h1>
+            <p>Acá ves las confirmaciones de tus acciones, los errores que hay que corregir y los avisos de SLA del barrio. Mensajes claros, en naranja cuando hay que prestar atención.</p>
+          </div>
+          <div class="page-hero-actions">
+            <button type="button" class="btn btn-orange" data-open-modal="stateModalSuccess">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ver alerta de éxito
+            </button>
+            <button type="button" class="btn btn-outline-light" data-open-modal="stateModalError">
+              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Ver alerta de error
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="alerts-workspace">
+      <div class="container">
+        <div class="alerts-layout">
+          <!-- Columna principal -->
+          <div class="alerts-stack">
+            <!-- Tarjeta destacada de ticket elevado -->
+            <article class="elevated-card" aria-labelledby="elevado-titulo">
+              <div class="elevated-head">
+                <span class="big-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <h2 id="elevado-titulo">¡Ticket elevado con éxito!</h2>
+                <p>Los apoyos vecinales superaron el umbral de prioridad y el reclamo pasó a la fila crítica del municipio.</p>
+              </div>
+              <div class="elevated-body">
+                <div class="elevated-ticket">
+                  <span><i class="fa-solid fa-ticket" aria-hidden="true"></i> Reclamo actualizado</span>
+                  <strong>VV-2041 · Bache en Av. San Martín</strong>
+                </div>
+
+                <div class="elevated-meta">
+                  <div>
+                    <strong>128</strong>
+                    <span>Apoyos</span>
+                  </div>
+                  <div>
+                    <strong>24 h</strong>
+                    <span>Nuevo SLA</span>
+                  </div>
+                  <div>
+                    <strong>Crítica</strong>
+                    <span>Prioridad</span>
+                  </div>
+                </div>
+
+                <div class="state-actions">
+                  <a href="tickets.html" class="state-link solid"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i> Ver en el tablero</a>
+                  <button type="button" class="state-link" data-open-modal="stateModalSuccess"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Abrir modal de éxito</button>
+                  <button type="button" class="state-link" data-demo-toast data-type="success" data-title="¡Ticket elevado!" data-message="VV-2041 pasó a prioridad crítica con SLA de 24 h."><i class="fa-solid fa-bell" aria-hidden="true"></i> Simular notificación</button>
+                </div>
+              </div>
+            </article>
+
+            <div class="alert-panel-head">
+              <h2>Estados del sistema</h2>
+              <p>Así se ven los cuatro tipos de mensaje en la interfaz. Todos usan la tipografía y los colores de la marca, con el naranja reservado para lo urgente.</p>
+            </div>
+
+            <!-- Success -->
+            <article class="state-card success" aria-labelledby="estado-success">
+              <span class="state-icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+              <div>
+                <h3 id="estado-success">Acción completada</h3>
+                <p>Tu comentario se publicó y el autor del reclamo recibió una notificación. El hilo queda visible para todo el barrio.</p>
+                <div class="state-actions">
+                  <button type="button" class="state-link" data-open-modal="stateModalSuccess"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Ver modal</button>
+                  <button type="button" class="state-link" data-demo-toast data-type="success" data-title="Comentario publicado" data-message="Tu aporte ya forma parte del hilo vecinal."><i class="fa-solid fa-bell" aria-hidden="true"></i> Ver toast</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Error -->
+            <article class="state-card error" aria-labelledby="estado-error">
+              <span class="state-icon" aria-hidden="true"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              <div>
+                <h3 id="estado-error">Faltan datos en el reporte</h3>
+                <p>No pudimos publicar el reclamo porque falta la ubicación y la descripción es demasiado corta. Revisá los campos marcados y volvé a intentarlo.</p>
+                <div class="state-actions">
+                  <button type="button" class="state-link solid" data-open-modal="stateModalError"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Ver modal de error</button>
+                  <button type="button" class="state-link" data-demo-toast data-type="error" data-title="No se pudo enviar" data-message="Revisá la ubicación y la descripción del reclamo."><i class="fa-solid fa-bell" aria-hidden="true"></i> Ver toast</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Warning -->
+            <article class="state-card warning" aria-labelledby="estado-warning">
+              <span class="state-icon" aria-hidden="true"><i class="fa-solid fa-hourglass-half"></i></span>
+              <div>
+                <h3 id="estado-warning">SLA próximo a vencer</h3>
+                <p>Al reclamo VV-2038 le quedan 6 horas para cumplir el plazo comprometido. Sumá tu apoyo o adjuntá evidencia actualizada para evitar que venza.</p>
+                <div class="state-actions">
+                  <button type="button" class="state-link" data-open-modal="stateModalWarning"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Ver modal de aviso</button>
+                  <button type="button" class="state-link" data-demo-toast data-type="info" data-title="SLA por vencer" data-message="VV-2038 vence en 6 horas."><i class="fa-solid fa-bell" aria-hidden="true"></i> Ver toast</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Info -->
+            <article class="state-card info" aria-labelledby="estado-info">
+              <span class="state-icon" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span>
+              <div>
+                <h3 id="estado-info">Actualización del servicio</h3>
+                <p>El tablero y las métricas funcionan con normalidad. La próxima actualización de datos está programada para mañana a las 08:00.</p>
+                <div class="state-actions">
+                  <button type="button" class="state-link" data-demo-toast data-type="info" data-title="Servicio operativo" data-message="Todos los módulos de VozVecina responden con normalidad."><i class="fa-solid fa-signal" aria-hidden="true"></i> Probar estado</button>
+                  <a href="metricas.html" class="state-link"><i class="fa-solid fa-chart-column" aria-hidden="true"></i> Ver métricas</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Columna lateral -->
+          <aside class="alerts-stack" aria-label="Demostraciones y preferencias">
+            <section class="panel" aria-labelledby="demo-titulo">
+              <div class="panel-head">
+                <div>
+                  <h2 id="demo-titulo">Demo de notificaciones</h2>
+                  <p class="panel-sub">Probá los avisos flotantes que aparecen al completar una acción.</p>
+                </div>
+                <span class="panel-note"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Interactivo</span>
+              </div>
+
+              <div class="demo-grid">
+                <button type="button" class="state-link solid" data-demo-toast data-type="success" data-title="¡Reporte publicado!" data-message="Tu reclamo ya está visible para el barrio.">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Éxito
+                </button>
+                <button type="button" class="state-link" data-demo-toast data-type="error" data-title="Faltan datos" data-message="Completá la ubicación para continuar.">
+                  <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Error
+                </button>
+                <button type="button" class="state-link" data-demo-toast data-type="info" data-title="Apoyo registrado" data-message="El SLA del reclamo se recalculó automáticamente.">
+                  <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Info
+                </button>
+                <button type="button" class="state-link" data-demo-toast data-type="success" data-title="Enlace copiado" data-message="Compartilo para sumar más apoyos.">
+                  <i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Compartir
+                </button>
+              </div>
+            </section>
+
+            <section class="panel" aria-labelledby="preferencias-titulo">
+              <div class="panel-head">
+                <div>
+                  <h2 id="preferencias-titulo">Preferencias de alertas</h2>
+                  <p class="panel-sub">Elegí qué novedades querés recibir.</p>
+                </div>
+              </div>
+
+              <label class="check-row">
+                <input type="checkbox" id="alertaEstado" checked>
+                <span>Cambios de estado en mis reclamos</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" id="alertaSla" checked>
+                <span>Avisos de SLA próximo a vencer</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" id="alertaApoyos">
+                <span>Nuevos apoyos y comentarios en mi barrio</span>
+              </label>
+              <label class="check-row" style="margin-bottom:0;">
+                <input type="checkbox" id="alertaResumen" checked>
+                <span>Resumen semanal de la red</span>
+              </label>
+
+              <div class="state-actions" style="margin-top:16px;">
+                <button type="button" class="state-link solid" data-demo-toast data-type="success" data-title="Preferencias guardadas" data-message="Podés cambiarlas cuando quieras desde este panel."><i class="fa-regular fa-floppy-disk" aria-hidden="true"></i> Guardar preferencias</button>
+              </div>
+            </section>
+
+            <section class="panel" aria-labelledby="historial-titulo">
+              <div class="panel-head">
+                <div>
+                  <h2 id="historial-titulo">Actividad reciente</h2>
+                  <p class="panel-sub">Últimos avisos del barrio.</p>
+                </div>
+              </div>
+
+              <ul class="tip-list" style="gap:15px;">
+                <li>
+                  <i class="fa-solid fa-circle-check" style="color:#1f6b4e;" aria-hidden="true"></i>
+                  <span><strong style="color:var(--verde);">Elevado</strong> · VV-2041 pasó a prioridad crítica.<br><span class="muted" style="font-size:.7rem;">Hace 12 minutos</span></span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-plus" style="color:var(--naranja-700);" aria-hidden="true"></i>
+                  <span><strong style="color:var(--verde);">Nuevo apoyo</strong> · 8 vecinos sumaron su respaldo a VV-2035.<br><span class="muted" style="font-size:.7rem;">Hace 40 minutos</span></span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-hourglass-half" style="color:#8a5a00;" aria-hidden="true"></i>
+                  <span><strong style="color:var(--verde);">SLA por vencer</strong> · VV-2038 vence en 6 horas.<br><span class="muted" style="font-size:.7rem;">Hace 1 hora</span></span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-comment-dots" style="color:var(--verde-600);" aria-hidden="true"></i>
+                  <span><strong style="color:var(--verde);">Nuevo comentario</strong> · María Paz actualizó el hilo del bache.<br><span class="muted" style="font-size:.7rem;">Hace 2 horas</span></span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="panel" aria-labelledby="ayuda-titulo">
+              <div class="panel-head">
+                <div>
+                  <h2 id="ayuda-titulo">¿Cómo leer los colores?</h2>
+                </div>
+              </div>
+              <ul class="tip-list">
+                <li><i class="fa-solid fa-circle" style="color:#1f6b4e;" aria-hidden="true"></i><span><strong>Verde:</strong> la acción se completó correctamente.</span></li>
+                <li><i class="fa-solid fa-circle" style="color:var(--naranja);" aria-hidden="true"></i><span><strong>Naranja:</strong> hay un error o algo requiere tu atención.</span></li>
+                <li><i class="fa-solid fa-circle" style="color:#d8a028;" aria-hidden="true"></i><span><strong>Ámbar:</strong> aviso preventivo, todavía podés actuar.</span></li>
+                <li><i class="fa-solid fa-circle" style="color:var(--verde-600);" aria-hidden="true"></i><span><strong>Verde claro:</strong> información general del servicio.</span></li>
+              </ul>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de éxito -->
+  <div id="stateModalSuccess" class="w3-modal vv-modal-wrap" role="dialog" aria-modal="true" aria-labelledby="modalSuccessTitle" aria-hidden="true">
+    <div class="w3-modal-content vv-modal-content vv-modal-sm">
+      <button type="button" class="modal-close" data-close aria-label="Cerrar alerta de éxito"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <div class="state-modal-body">
+        <span class="state-modal-icon success" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+        <h2 id="modalSuccessTitle">¡Ticket elevado con éxito!</h2>
+        <p>Tu apoyo hizo que el reclamo supere el umbral de prioridad. El municipio ahora debe responder en un plazo menor.</p>
+        <div class="state-modal-detail">
+          <span>Ticket: <strong>VV-2041</strong> · Bache en Av. San Martín</span><br>
+          <span>Prioridad: <strong>Crítica</strong> · SLA: <strong>24 horas</strong></span>
+        </div>
+        <div class="state-modal-actions">
+          <a href="tickets.html" class="btn btn-orange"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i> Ver el tablero</a>
+          <button type="button" class="btn btn-outline" data-close>Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de error -->
+  <div id="stateModalError" class="w3-modal vv-modal-wrap" role="alertdialog" aria-modal="true" aria-labelledby="modalErrorTitle" aria-describedby="modalErrorDesc" aria-hidden="true">
+    <div class="w3-modal-content vv-modal-content vv-modal-sm">
+      <button type="button" class="modal-close" data-close aria-label="Cerrar alerta de error"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <div class="state-modal-body">
+        <span class="state-modal-icon error" aria-hidden="true"><i class="fa-solid fa-triangle-exclamation"></i></span>
+        <h2 id="modalErrorTitle">Faltan datos en el reporte</h2>
+        <p id="modalErrorDesc">No pudimos publicar el reclamo. Corregí estos puntos y volvé a intentarlo:</p>
+        <ul style="max-width:340px;margin:16px auto 0;padding-left:20px;color:#5c4a36;font-size:.8rem;line-height:1.65;text-align:left;">
+          <li>La dirección del problema es obligatoria.</li>
+          <li>La descripción debe tener al menos 20 caracteres.</li>
+          <li>Tenés que aceptar la publicación de los datos.</li>
+        </ul>
+        <div class="state-modal-actions">
+          <a href="reportar.html" class="btn btn-orange"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Volver al formulario</a>
+          <button type="button" class="btn btn-outline" data-close>Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de aviso -->
+  <div id="stateModalWarning" class="w3-modal vv-modal-wrap" role="alertdialog" aria-modal="true" aria-labelledby="modalWarningTitle" aria-hidden="true">
+    <div class="w3-modal-content vv-modal-content vv-modal-sm">
+      <button type="button" class="modal-close" data-close aria-label="Cerrar aviso de SLA"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <div class="state-modal-body">
+        <span class="state-modal-icon warning" aria-hidden="true"><i class="fa-solid fa-hourglass-half"></i></span>
+        <h2 id="modalWarningTitle">El SLA está por vencer</h2>
+        <p>Al reclamo de la luminaria en Los Álamos le quedan pocas horas para cumplir el plazo. Tu apoyo puede ayudar a que se priorice.</p>
+        <div class="state-modal-detail">
+          <span>Ticket: <strong>VV-2038</strong> · Luminaria apagada</span><br>
+          <span>Tiempo restante: <strong>6 horas</strong> · Apoyos: <strong>96</strong></span>
+        </div>
+        <div class="state-modal-actions">
+          <button type="button" class="btn btn-orange" data-close><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Sumar mi apoyo</button>
+          <button type="button" class="btn btn-outline" data-close>Más tarde</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand" aria-label="VozVecina, ir al inicio">
+            <img src="assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
+            <span class="brand-copy"><span class="brand-name">Voz<span>Vecina</span></span><span class="brand-tag">Red ciudadana</span></span>
+          </a>
+          <p>Una red colaborativa para que los problemas del barrio se vean, se prioricen y se resuelvan.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="VozVecina en Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="VozVecina en Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="VozVecina en X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="mailto:hola@vozvecina.org" aria-label="Escribir a VozVecina"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="tickets.html">Tablero de reclamos</a>
+            <a href="reportar.html">Reportar un problema</a>
+            <a href="metricas.html">Métricas y SLA</a>
+            <a href="alertas.html">Centro de alertas</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>La red</h4>
+          <div class="footer-links">
+            <a href="index.html#como-funciona">Cómo funciona</a>
+            <a href="metricas.html">Transparencia</a>
+            <a href="alertas.html">Estado del servicio</a>
+            <a href="mailto:hola@vozvecina.org">Contacto</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Sumate al resumen</h4>
+          <div class="footer-mini">
+            <p>Una vez por semana: reclamos que avanzan, logros del barrio y próximos pasos.</p>
+            <button type="button" class="btn btn-orange btn-sm" data-demo-toast data-title="Suscripción simulada" data-message="En el prototipo no se envían correos reales."><i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Recibir el resumen</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> VozVecina · Hecho por vecinos, para vecinos.</span>
+        <div class="footer-bottom-links">
+          <a href="alertas.html">Privacidad</a>
+          <a href="alertas.html">Términos</a>
+          <a href="alertas.html">Accesibilidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toastStack" class="toast-stack" aria-live="polite" aria-atomic="false"></div>
+</body>
+</html>

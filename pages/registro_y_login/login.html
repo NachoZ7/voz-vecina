@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conectarse · VozVecina</title>
+  <meta name="description"
+    content="Iniciá sesión en VozVecina para reportar y apoyar reclamos de tu barrio.">
+  <meta name="theme-color" content="#254c3e">
+  <link rel="icon" type="image/svg+xml" href="../../assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../css/w3.css">
+  <link rel="stylesheet" href="../../css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/navbar.js" defer></script>
+  <script src="../../js/app.js" defer></script>
+  <script src="../../js/auth.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../../index.html" class="brand" aria-label="VozVecina, ir al inicio">
+        <img src="../../assets/logo.png" alt="" class="brand-mark" width="44" height="44">
+        <span class="brand-copy">
+          <span class="brand-name">Voz<span>Vecina</span></span>
+          <span class="brand-tag">Red ciudadana</span>
+        </span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal"></nav>
+      <div class="user-nav" id="user-container"></div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="auth-workspace">
+      <div class="container">
+        <div class="auth-card">
+          <span class="kicker">Mi cuenta</span>
+          <h1>Conectate a VozVecina</h1>
+          <p class="auth-lead">Ingresá para reportar problemas, apoyar reclamos y seguir tu actividad vecinal.</p>
+          <form id="form-login" novalidate>
+            <div class="form-alert" role="alert" hidden>
+              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+              <span></span>
+            </div>
+            <div class="field">
+                <label for="login-user">Usuario o email <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" type="text" id="login-user" name="login-user" placeholder="Tu usuario o email" autocomplete="username" required >
+              </div>
+            <div class="field">
+                <label for="login-password">Contraseña <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" type="password" id="login-password" name="login-password" placeholder="Tu contraseña" autocomplete="current-password" required >
+              </div>
+            <button type="submit" class="btn btn-orange btn-block"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Conectarme</button>
+          </form>
+          <p class="auth-switch">¿Todavía no tenés cuenta? <a href="registro.html">Registrate acá</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../index.html" class="brand" aria-label="VozVecina, ir al inicio">
+            <img src="../../assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
+            <span class="brand-copy"><span class="brand-name">Voz<span>Vecina</span></span><span class="brand-tag">Red
+                ciudadana</span></span>
+          </a>
+          <p>Una red colaborativa para que los problemas del barrio se vean, se prioricen y se resuelvan.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="VozVecina en Instagram"><i
+                class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="VozVecina en Facebook"><i
+                class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="VozVecina en X"><i
+                class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="mailto:hola@vozvecina.org" aria-label="Escribir a VozVecina"><i class="fa-solid fa-envelope"
+                aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <div class="footer-links">
+            <a href="../../index.html">Inicio</a>
+            <a href="../../tickets.html">Tablero de reclamos</a>
+            <a href="../../reportar.html">Reportar un problema</a>
+            <a href="../../metricas.html">Métricas y SLA</a>
+            <a href="../../alertas.html">Centro de alertas</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>La red</h4>
+          <div class="footer-links">
+            <a href="../../index.html#como-funciona">Cómo funciona</a>
+            <a href="../../metricas.html">Transparencia</a>
+            <a href="../../alertas.html">Estado del servicio</a>
+            <a href="mailto:hola@vozvecina.org">Contacto</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Sumate al resumen</h4>
+          <div class="footer-mini">
+            <p>Una vez por semana: reclamos que avanzan, logros del barrio y próximos pasos.</p>
+            <button type="button" class="btn btn-orange btn-sm" data-demo-toast data-title="Suscripción simulada"
+              data-message="En el prototipo no se envían correos reales."><i class="fa-regular fa-paper-plane"
+                aria-hidden="true"></i> Recibir el resumen</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> VozVecina · Hecho por vecinos, para vecinos.</span>
+        <div class="footer-bottom-links">
+          <a href="../../alertas.html">Privacidad</a>
+          <a href="../../alertas.html">Términos</a>
+          <a href="../../alertas.html">Accesibilidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toastStack" class="toast-stack" aria-live="polite" aria-atomic="false"></div>
+</body>
+
+</html>
